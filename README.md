@@ -1,46 +1,109 @@
-# My Serverless Handbook
+# Serverless Handbook
 
-![Cover Image.](images/serverless-handbook-cover-image.png)
+A modern, searchable website for Jimmy Dahlqvist's AWS Serverless Handbook. Built with VitePress for fast performance and excellent developer experience.
 
-**Welcome to My Serverless Handbook.**
+![Serverless Handbook Cover](docs/public/images/serverless-handbook-cover-image.png)
 
-I'm Jimmy Dahlqvist, cloud architect and developer with deep-rooted passion for serverless and event-driven design.
+## 🚀 Quick Start
 
-This is the home to my learnings and experiences working with serverless and event-driven workloads on AWS. I started working with serverless technologies back in 2015. You who have heard my public talks might remember me saying that when I started AWS Lambda had a maximum memory of 1024mb and there was no environment variables, that is how Lambda-old I am.
+```bash
+# Install dependencies
+npm install
 
-As an [AWS Serverless Hero](https://aws.amazon.com/developer/community/heroes/jimmy-dahlqvist), AWS Ambassador, and User Group Leader, I've dedicated myself to sharing knowledge and contributing to the broader AWS community.
+# Start development server
+npm run dev
 
-I hope you will enjoy this corner in the serverless and event-driven universe!!
+# Build for production
+npm run build
+```
 
-## Connect with me
+Visit `http://localhost:5173/` to view the site locally.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dahlqvistjimmy/)
-[![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/jimmydahlqvist?style=for-the-badge&logo=x&logoColor=FFFFFF&labelColor=000000&color=000000)](https://twitter.com/jimmydahlqvist)
-[![YouTube Playlist](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/playlist?list=PLTNLZCwlGJtjZ_8TiJmLSEI5WXYWbXAo0&si=z_1o1-SGmN1QJW12)
-[![Blog website](https://img.shields.io/badge/Blog-https://jimmydqv.com-red)](https://jimmydqv.com)
+## 📁 Project Structure
 
-## What to expect
+```
+serverless-handbook/
+├── docs/                    # VitePress site
+│   ├── .vitepress/         # Configuration & theming
+│   ├── solutions/          # 8 production-ready solutions
+│   ├── tutorials/          # 4 step-by-step guides  
+│   ├── workshops/          # 1 hands-on workshop
+│   └── patterns/           # 2 architecture patterns
+├── .github/workflows/      # Deployment automation
+└── package.json
+```
 
-In this repo you will find my learnings and experiences across a couple of different categories, that you can use to learn serverless and event-driven on AWS. When I say serverless it will not only be about Lambda functions, StepFunctions and EventBridge. It will also be SQS, SNS, IoT Core, ECS with Fargate, S3, CloudFront and many many more services.
+## 🛠️ Development
 
-For the most parts new solutions will be accompanied by a deep dive blog post on [jimmydqv.com](https://jimmydqv.com)
+```bash
+npm run dev        # Start dev server
+npm run build      # Build for production
+npm run preview    # Preview production build
+```
 
-### Solutions
+## 📚 Content
 
-Solutions are ready to deploy PoC, tests, and solutions of different sizes. Everything from large complex solutions to small bite sized. These solutions can be deployed, tested, and adapted for your needs.
+### 🏗️ Solutions (8 items)
+Production-ready serverless solutions with CloudFormation templates:
+- Authentication systems (CloudFront Edge, PEP/PDP)
+- Monitoring solutions (CloudFront Statistics) 
+- SaaS platforms (Connected BBQ)
+- Utility services (Image Moderation, URL Redirect, etc.)
 
-### Tutorials
+### 📖 Tutorials (4 items)
+Step-by-step technical guides:
+- Container deployment on ECS Fargate
+- Graviton optimization for Lambda
+- Multi-region IoT architectures
 
-Tutorials are step by step instructions, with all source code available, that you can follow and learn how to build a particular solution. This can range from running a Java service on Fargate to build a multi-region IoT solution. Tutorials will always have all source code, including all CloudFormation, available for easy deploy.
+### 🔬 Workshops (1 item)
+Hands-on learning experiences:
+- Event-driven AI translation Slack bot
 
-### Workshops
+### 🏛️ Patterns (2 items)
+Architectural patterns:
+- Retry Backoff Jitter
+- Storage-First design
 
-Workshops are like Tutorials but without detailed step by step instructions. Instead it can be an instruction saying "Create a StepFunction and have it invoked by an event coming from S3 on the default event-bus." Workshops will have hints, if you need assistance, and detailed step by step instructions in case you get stuck. Just as with Tutorials all source code, including all CloudFormation, will be available if you need it.
+## 🚀 Deployment
 
-### Architecture Patterns
+### SST v3 Deployment
 
-Architecture Patterns are common patterns that I use over and over again, with description of it's benefits and why I use it. It will also contain instructions and source code on how to implement the pattern in a serverless way.
+```bash
+# Deploy to test environment
+npx sst deploy --stage test
 
-### Lesson learned
+# Deploy to production environment
+npx sst deploy --stage production
+```
 
-Lesson learned is a section with some gotchas and learnings from working with serverless on AWS for many many years.
+This deploys the real site to your currently authenticated AWS account. You can set a real domain in the `sst.config.ts` file.
+
+### GitHub Pages
+
+The site automatically deploys to GitHub Pages when you push to the main branch via GitHub Actions.
+
+For manual deployment, build the site and deploy the `docs/.vitepress/dist/` folder to any static hosting provider.
+
+## 🎨 Features
+
+- ⚡ Fast static site generation with VitePress
+- 🔍 Built-in local search
+- 📱 Responsive design with AWS orange branding  
+- 🌙 Dark mode support
+- 🎯 SEO optimized
+- 📊 Custom Vue components for enhanced UX
+
+## 📄 License
+
+MIT License - see original repository for details.
+
+## 🙏 Acknowledgments
+
+- **Jimmy Dahlqvist** - Original content creator and AWS Serverless Hero
+- **VitePress Team** - Excellent documentation framework
+- **Vue.js Team** - Powerful frontend framework
+
+---
+
+**Built with ❤️ using VitePress**

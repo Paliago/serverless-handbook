@@ -1,0 +1,161 @@
+/**
+ * Customize default theme styling by overriding CSS variables:
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ */
+
+:root {
+  --vp-c-brand: #ff9500;
+  --vp-c-brand-light: #ffb84d;
+  --vp-c-brand-lighter: #ffd699;
+  --vp-c-brand-lightest: #ffe5cc;
+  --vp-c-brand-dark: #e6860c;
+  --vp-c-brand-darker: #cc7a0a;
+  --vp-c-brand-dimm: rgba(255, 149, 0, 0.08);
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-light);
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-c-brand-dark);
+}
+
+/**
+ * Component: Hero
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-hero-name-color: transparent;
+  --vp-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    #ff9500 30%,
+    #ffb84d
+  );
+
+  --vp-hero-tagline-color: var(--vp-c-text-2);
+}
+
+/**
+ * Component: Custom Blocks
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-custom-block-tip-border: transparent;
+  --vp-custom-block-tip-text: var(--vp-c-text-1);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+  --vp-custom-block-tip-code-bg: var(--vp-c-brand-dimm);
+}
+
+/**
+ * Component: Algolia
+ * -------------------------------------------------------------------------- */
+
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand) !important;
+}
+
+/**
+ * VitePress: Custom Styles
+ * -------------------------------------------------------------------------- */
+
+/* Hero image styling */
+.VPHero .VPImage {
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced code blocks */
+div[class*="language-"] {
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+/* Custom content layout */
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Category cards for homepage */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+/* AWS service badges */
+.service-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 12px 0;
+}
+
+/* Cost indicator */
+.cost-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: #e8f5e8;
+  color: #2d5a2d;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.cost-indicator.low {
+  background: #e8f5e8;
+  color: #2d5a2d;
+}
+
+.cost-indicator.medium {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.cost-indicator.high {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .service-badges {
+    justify-content: center;
+  }
+}
+
+/* Dark mode adjustments */
+.dark {
+  .cost-indicator.low {
+    background: rgba(40, 167, 69, 0.2);
+    color: #4caf50;
+  }
+  
+  .cost-indicator.medium {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+  }
+  
+  .cost-indicator.high {
+    background: rgba(220, 53, 69, 0.2);
+    color: #f44336;
+  }
+}
