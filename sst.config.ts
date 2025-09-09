@@ -16,7 +16,7 @@ export default $config({
         command: "npm run build",
         output: "docs/.vitepress/dist"
       },
-      // domain: "domain.com"
+      // domain: $app.stage === "production" ? "domain.com" : $app.stage === "test" ? "test.domain.com" : undefined,
     })
   },
 });
